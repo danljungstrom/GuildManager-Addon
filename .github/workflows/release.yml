@@ -1,0 +1,26 @@
+name: Release
+
+# A v* tag (pushed by GuildManager's addon/tools/publish.sh) builds the zip with the BigWigs
+# packager and uploads it to GitHub Releases, and to CurseForge, Wago and WoWInterface once
+# their project IDs are in the .toc and their tokens are repo secrets. A site without both is
+# skipped.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
+      WOWI_API_TOKEN: ${{ secrets.WOWI_API_TOKEN }}
+      GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: BigWigsMods/packager@v2
