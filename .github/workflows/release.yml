@@ -1,6 +1,6 @@
 name: Release
 
-# A v* tag (pushed by GuildManager's addon/tools/publish.sh) builds the zip with the BigWigs
+# A v* tag (pushed by Guildion's addon/tools/publish.sh) builds the zip with the BigWigs
 # packager and uploads it to GitHub Releases, and to CurseForge, Wago and WoWInterface once
 # their project IDs are in the .toc and their tokens are repo secrets. A site without both is
 # skipped.
