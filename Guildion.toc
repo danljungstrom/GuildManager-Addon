@@ -1,0 +1,40 @@
+## Interface: 16001, 11509
+## Title: Guildion
+## Notes: Records a raid (attendance, pulls, loot) and exports it for the Guildion web app.
+## Author: danljungstrom
+## Version: 0.5.0
+## IconTexture: Interface\AddOns\Guildion\media\icon
+## SavedVariables: GuildionDB
+## OptionalDeps: Gargul
+## X-Curse-Project-ID: 1768945
+## X-Wago-ID: 4N2bYQNL
+
+libs/LibStub/LibStub.lua
+libs/LibDeflate/LibDeflate.lua
+
+core/init.lua
+core/util.lua
+core/db.lua
+core/json.lua
+core/base64.lua
+
+record/session.lua
+record/roster.lua
+record/encounters.lua
+record/loot.lua
+record/gargul.lua
+
+export/payload.lua
+export/guild.lua
+
+ui/theme.lua
+ui/widgets.lua
+ui/main.lua
+ui/strip.lua
+ui/sessions.lua
+ui/current.lua
+ui/settings.lua
+ui/minimap.lua
+ui/options.lua
+
+core/commands.lua
